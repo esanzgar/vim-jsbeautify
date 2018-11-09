@@ -449,6 +449,9 @@ endfun
 " https://github.com/editorconfig/editorconfig-vim.git
 func! BeautifierEditorconfigHook(config)
   let type = expand('%:e')
+  if (type == 'ts')
+      let type = 'js'
+  endif
   let config = a:config
 
   if !(type(config) == 4)
